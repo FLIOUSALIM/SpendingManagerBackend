@@ -19,12 +19,6 @@ public class SpendingManagerApplication {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(SpendingManagerApplication.class);
 
-    @GetMapping("/")
-    @ResponseBody
-    public String home() {
-        return "hello world";
-    }
-
     public static void main(String[] args) {
         LOGGER.info("SpendingManagerApplication starting ...");
         SpringApplication.run(SpendingManagerApplication.class, args);
