@@ -1,18 +1,12 @@
 package org.melsif.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
+@Data
 public class User {
 
     @Id
@@ -23,12 +17,12 @@ public class User {
 
     private String prenom;
 
-    private String budget;
+    private int budget;
 
     private String email;
 
     private String password;
 
     @OneToMany
-    private List<Depense> depenses;
+    private List<Expenditure> expenditures;
 }

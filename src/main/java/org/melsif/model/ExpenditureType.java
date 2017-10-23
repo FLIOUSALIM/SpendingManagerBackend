@@ -15,7 +15,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @Getter
 @Setter
-public class TypeDepense {
+public class ExpenditureType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

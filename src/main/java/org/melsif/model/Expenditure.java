@@ -1,9 +1,6 @@
 package org.melsif.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -13,7 +10,8 @@ import java.util.Date;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Depense {
+@Builder
+public class Expenditure {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,5 +22,5 @@ public class Depense {
     private Date date;
 
     @ManyToOne
-    private TypeDepense typeDepense;
+    private ExpenditureType expenditureType;
 }
