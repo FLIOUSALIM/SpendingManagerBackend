@@ -1,13 +1,18 @@
 package org.melsif.service;
 
-import org.melsif.bean.xml.User;
+import org.melsif.model.User;
 import org.melsif.repository.UserRepository;
 import org.melsif.util.XmlConverter;
 import org.melsif.util.mapper.UserMapper;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import java.io.IOException;
+
+import static java.util.Collections.emptyList;
 
 @Service
 public class UserService {
@@ -24,13 +29,22 @@ public class UserService {
     private UserMapper userMapper;
 
     public void initializeUsers() {
-        User userXml = null;
+        org.melsif.bean.xml.User userXml = null;
         try {
-            userXml = (User) xmlConverter.fromXmltoObject(FILENAME);
+            userXml = (org.melsif.bean.xml.User) xmlConverter.fromXmltoObject(FILENAME);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        org.melsif.model.User user = userMapper.fromXmltoObject(userXml);
+        User user = userMapper.fromXmltoObject(userXml);
         userRepository.save(user);
+    }
+
+    public UserDetails getUserByEmail(String email) {
+       User user = userRepository.findByEmail(email);
+       if (user == null) {
+           throw new UsernameNotFoundException(email);
+       }
+
+       return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), emptyList());
     }
 }
