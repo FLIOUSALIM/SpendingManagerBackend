@@ -16,6 +16,9 @@ public class SpendingManagerService {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private ExpenditureTypeService expenditureTypeService;
+
 
     public void initializeApplication() {
         if (!paramService.isUsersInitialized()) {
@@ -23,6 +26,13 @@ public class SpendingManagerService {
             userService.initializeUsers();
             paramService.putUsersInitialized();
             LOGGER.info("Users initialized...");
+        }
+
+        if (!paramService.isExpenditureTypeInitialized()) {
+            LOGGER.info("Initializing Expenditure Types ...");
+            expenditureTypeService.initializeExpenditureType();
+            paramService.putExpenditureTypeInitialized();
+            LOGGER.info("Expenditure Types initialized...");
         }
     }
 }
