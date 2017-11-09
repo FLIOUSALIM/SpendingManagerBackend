@@ -16,6 +16,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                 .antMatchers("/spending")
                 .permitAll()
                 .and()
+                .cors()
+                .and()
                 .csrf().disable();
     }
 }
