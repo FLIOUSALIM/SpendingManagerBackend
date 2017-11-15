@@ -11,7 +11,7 @@ public class Expenditure {
 
     private int id;
 
-    private int cout;
+    private int cost;
 
     private String date;
 

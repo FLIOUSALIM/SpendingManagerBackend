@@ -20,7 +20,7 @@ public class SpendingController {
     @CrossOrigin(origins = "http://localhost:4200")
     public Expenditure saveExpenditure(@RequestBody ExpenditureForm expenditureForm) {
         Expenditure expenditure = Expenditure.builder()
-                .cout(expenditureForm.getCout())
+                .cost(expenditureForm.getCost())
                 .date(new Date())
                 .build();
         return expenditureRepository.save(expenditure);

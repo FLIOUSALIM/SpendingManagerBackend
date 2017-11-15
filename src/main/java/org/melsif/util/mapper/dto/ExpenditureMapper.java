@@ -13,7 +13,7 @@ public interface ExpenditureMapper {
 
     @Mappings({
             @Mapping(source = "id", target = "id"),
-            @Mapping(source = "cout", target = "cout"),
+            @Mapping(source = "cost", target = "cost"),
             @Mapping(source = "date", target = "date"),
             @Mapping(source = "expenditureType.type", target = "type"),
     })

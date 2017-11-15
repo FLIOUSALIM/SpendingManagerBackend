@@ -17,7 +17,7 @@ public class Expenditure {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private int cout;
+    private int cost;
 
     private Date date;
 

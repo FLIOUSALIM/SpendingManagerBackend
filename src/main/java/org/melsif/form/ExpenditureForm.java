@@ -8,7 +8,7 @@ import lombok.*;
 @Getter
 @Setter
 public class ExpenditureForm {
-    private int cout;
+    private int cost;
     private String date;
     private String type;
 }

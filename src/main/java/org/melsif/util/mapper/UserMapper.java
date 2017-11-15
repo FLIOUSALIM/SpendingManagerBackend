@@ -10,10 +10,10 @@ import org.melsif.model.User;
 public interface UserMapper {
 
     @Mappings({
-            @Mapping(source = "lastname", target = "nom"),
-            @Mapping(source = "firstname", target = "prenom"),
+            @Mapping(source = "lastname", target = "lastname"),
+            @Mapping(source = "firstname", target = "firstname"),
             @Mapping(source = "budget", target = "budget"),
-            @Mapping(source = "email", target = "email"),
+            @Mapping(source = "username", target = "username"),
             @Mapping(source = "password", target = "password")
     })
     User fromXmltoObject(org.melsif.bean.xml.User user);

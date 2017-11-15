@@ -21,8 +21,8 @@ public class User {
     @XmlElement(name = "budget")
     private int budget;
 
-    @XmlElement(name = "email")
-    private String email;
+    @XmlElement(name = "username")
+    private String username;
 
     @XmlElement(name = "password")
     private String password;

@@ -13,13 +13,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private String nom;
+    private String lastname;
 
-    private String prenom;
+    private String firstname;
 
     private int budget;
 
-    private String email;
+    private String username;
 
     private String password;
 
